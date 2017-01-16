@@ -3,6 +3,17 @@
 
 using namespace std;
 
+// no need to find all the primes to do factorization
+void Factorize(int n) {
+    for (int i = 2; i * i <= n; ++i) if (n % i == 0) {
+        while (n % i == 0) {
+            n /= i;
+            c[i]++;
+        }
+    }
+    if (n > 1) c[n]++;
+}
+
 bool isPrime[1001];
 
 void isPrime_(int t) {
